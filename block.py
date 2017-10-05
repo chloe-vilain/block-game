@@ -25,33 +25,3 @@ class Block(object):
 			self.positions = [(position[0]* -1, position[1]) for position in self.positions]
 		else:
 			raise ValueError('Invalid axis')
-
-
-"""class Board(object):
-
-	def __init__(self, y=20, x=20):
-		self.blocks = {}
-
-	def add_block(self,block,orientation,location):
-		self.blocks[]"""
-
-def tests():
-	L = Block('red', [(0,0), (0,1), (0,2), (1,0)])
-	print(L)
-	print(L.positions)
-	print(L.color)
-	for i in range(4):
-		L.rotate('left')
-		print(L.positions)
-	for i in range(4):
-		L.rotate('right')
-		print(L.positions)
-	for i in range(2):
-		L.reflect('x')
-		print(L.positions)
-	for i in range(2):
-		L.reflect('y')
-		print(L.positions)
-
-
-tests()
