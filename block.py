@@ -1,4 +1,3 @@
-import unittest
 
 class Block(object):
 	"""A block object with attributes 
@@ -25,3 +24,5 @@ class Block(object):
 			self.positions = [(position[0]* -1, position[1]) for position in self.positions]
 		else:
 			raise ValueError('Invalid axis')
+
+

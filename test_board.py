@@ -1,22 +1,22 @@
 import unittest
 from block import Block
-from game import Game
+from board import Board
 
 class TestBlock(unittest.TestCase):
 
 	def test_add_block(self):
-		g = Game()
+		g = Board()
 		l = Block('red', [(0, 0), (0, 1), (0, 2), (1, 0)])
 		g.add_block(l, (7, 7))
-		self.assertEqual(g.board[(7,7)],'red')
-		self.assertEqual(g.board[(7,8)], 'red')
-		self.assertEqual(g.board[(7,9)], 'red')
-		self.assertEqual(g.board[(8,7)], 'red')
-		self.assertNotEqual(g.board[(7,7)], 'blue')
-		self.assertNotIn((9,9), g.board.keys())
+		self.assertEqual(g.grid[(7,7)],'red')
+		self.assertEqual(g.grid[(7,8)], 'red')
+		self.assertEqual(g.grid[(7,9)], 'red')
+		self.assertEqual(g.grid[(8,7)], 'red')
+		self.assertNotEqual(g.grid[(7,7)], 'blue')
+		self.assertNotIn((9,9), g.grid.keys())
 
 	def test_can_add_block(self):
-		g = Game()
+		g = Board()
 		l = Block('red', [(0, 0), (0, 1), (0, 2), (1, 0)])
 		o = Block('red', [(0, 0), (0, 1), (1, 0), (1, 1)])
 		o2 = Block('blue', [(0, 0), (0, 1), (1, 0), (0, -1), (-1, 0)])
